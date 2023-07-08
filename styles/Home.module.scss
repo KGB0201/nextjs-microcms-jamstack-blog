@@ -11,6 +11,11 @@
   margin-bottom: 40px;
 }
 
+.link {
+  color: blue;
+  text-decoration: underline;
+}
+
 .post {
   & > h1 {
     font-size: 30px;

@@ -2,8 +2,6 @@ import Link from "next/link";
 import { client } from "@/libs/client";
 import styles from "@/styles/Home.module.scss";
 
-//CSS
-
 //SSG
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "blog" });
@@ -21,7 +19,7 @@ export default function Home({ blog }) {
       {blog.map((blog) => (
         <li key={blog.id}>
           <Link href={`blog/${blog.id}`} legacyBehavior>
-            <a href="">{blog.title}</a>
+            <a className={styles.link}>{blog.title}</a>
           </Link>
         </li>
       ))}
