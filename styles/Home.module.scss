@@ -16,6 +16,12 @@
   text-decoration: underline;
 }
 
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
 .post {
   & > h1 {
     font-size: 30px;
