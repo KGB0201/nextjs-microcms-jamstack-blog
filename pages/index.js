@@ -16,6 +16,7 @@ export const getStaticProps = async () => {
 export default function Home({ blog }) {
   return (
     <div className={styles.container}>
+      <h1 className={styles.title}>l0ibuism</h1>
       <h2 className={styles.postsHeader}>Posts</h2>
       <ul>
         {blog.map((blog) => (
