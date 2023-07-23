@@ -15,28 +15,31 @@ export const getStaticProps = async () => {
 
 export default function Home({ blog }) {
   return (
-    <ul className={styles.container}>
-      {blog.map((blog) => (
-        <li key={blog.id}>
-          <div>
-            <span
-              suppressHydrationWarning
-              style={{
-                fontSize: "3px",
-                padding: "5px",
-                backgroundColor: "#F0F0F0",
-                borderRadius: "5px",
-              }}
-            >
-              {new Date(blog.publishedAt).toLocaleDateString()}
-            </span>
-            &emsp; {/* 全角スペース */}
-            <Link href={`blog/${blog.id}`} legacyBehavior>
-              <a className={styles.link}>{blog.title}</a>
-            </Link>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.container}>
+      <h2 className={styles.postsHeader}>Posts</h2>
+      <ul>
+        {blog.map((blog) => (
+          <li key={blog.id}>
+            <div>
+              <span
+                suppressHydrationWarning
+                style={{
+                  fontSize: "3px",
+                  padding: "5px",
+                  backgroundColor: "#F0F0F0",
+                  borderRadius: "5px",
+                }}
+              >
+                {new Date(blog.publishedAt).toLocaleDateString()}
+              </span>
+              &emsp; {/* 全角スペース */}
+              <Link href={`blog/${blog.id}`} legacyBehavior>
+                <a className={styles.link}>{blog.title}</a>
+              </Link>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
